@@ -1,0 +1,42 @@
+@import './../variables';
+nav {
+  background-color: $bg-dark;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 360px;
+  border-radius: 35px;
+  border: 2px solid $white;
+  position: fixed;
+  margin-left: 10px;
+  margin-top: 10px;
+  ul {
+    li {
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      color: $white;
+      a {
+        font-size: 26px;
+      }
+    }
+  }
+}
+
+nav {
+  .active {
+    background-color: $white;
+    color: black;
+  }
+}
+
+body {
+  height: 200vh;
+}
