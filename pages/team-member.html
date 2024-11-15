@@ -1,4 +1,4 @@
-<html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeamFolio</title>
     <link rel="icon" href="./../assets/favicon.png" />
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+
     <link rel="stylesheet" href="./../css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
         integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
@@ -13,7 +16,7 @@
 </head>
 
 <body>
-    <nav>
+    <nav class="phone-nav">
         <ul>
             <li class="active"><a href="#"><i class="fa-solid fa-table-cells-large"></i></a></li>
             <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
@@ -23,26 +26,185 @@
             <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
         </ul>
     </nav>
+    <nav class="desktop-nav">
+        <span> <span>&lt;S3A/&gt;</span> SassTeam</span>
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
 
-    <main class="main-content">
-        <h1>Developer</h1>
-        <span>&lt;h1&gt;</span>
-        <p>hey
-            I'm Sinan,
-            Full-stack developer
-        </p>
-        <span>&lt;h1&gt;</span>
-        <p>
-            <span>&lt;h1&gt;</span>
-            I help business grow by crafting amzing web experiences.
-            if your are looking for developer that likes to get things done.
-            <span>&lt;h1&gt;</span>
-        </p>
+        </ul>
 
-        <span>Let's Talk <i class="fa-solid fa-envelope"></i></span>
+        <div class="desktop-nav-icons">
+            <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
+            <a href="#"><i class="fa-brands fa-github"></i></i> Github</a>
+
+        </div>
+    </nav>
+
+    <main class="team-member-main">
+        <h1 class="developer">Developer</h1>
+        <div class="team-member-main-content">
+            <div class="team-member-text">
+
+                <p class="first-p"> <span>&lt;h1&gt;</span>
+                    <br>
+                    hey <br>
+                    I'm <span class="name-span">Sinan</span> <br>
+                    Full-stack developer
+                    <span>&lt;h1&gt;</span>
+                </p>
+
+                <p>
+                    <span>&lt;p&gt;</span>
+                    <br>
+                    <br>
+                    I help business grow by crafting amzing web experiences.
+                    if your are looking for developer that likes to get things done.
+                    <br>
+                    <br>
+                    <span>&lt;p&gt;</span>
+
+                </p>
+
+                <p class="lets-talk">Let's Talk <i class="fa-solid fa-envelope"></i></p>
+            </div>
+
+            <div class="team-member-box">
+                <div class="team-member-box-header">
+                    <img src="./../assets/ayoub.jpg" alt="">
+                    <h2>Smail</h2>
+                    <p>Full-stack developer</p>
+                </div>
+
+                <div class="team-member-box-content">
+                    <p>ayoub.benmansour@gmail.com</p>
+                    <p>morocco</p>
+                    <p>Full-time / Freelancer</p>
+                    <p>www.example.com</p>
+                </div>
+
+                <div class="team-member-box-skills">
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>JS</span>
+                    <span>REACT</span>
+                </div>
+
+                <div class="team-member-box-btn">
+                    <a href="#" class="main-button">Update profile</a>
+                </div>
+            </div>
+
+            <div class="team-member-resume">
+                <div class="team-member-resume-line">
+                    <span>4</span>
+                    <p>Programming language</p>
+                </div>
+                <div class="team-member-resume-line">
+                    <span>4</span>
+                    <p>Programming language</p>
+                </div>
+                <div class="team-member-resume-line">
+                    <span>4</span>
+                    <p>Programming language</p>
+                </div>
+            </div>
+        </div>
+        <div class="team-member-testi">
+            <h1 class="team-main-title">Testimonials</h1>
+            <div class="testimonial-card-container">
+                <div class="testimonial-card">
+                    <div class="header">
+                        <img src="./../assets/ayoub.jpg" alt="">
+                        <p>Name lastname</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptates iusto, rem
+                        autem voluptatem harum ad quod aperiam aut illo.
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="header">
+                        <img src="./../assets/ayoub.jpg" alt="">
+                        <p>Name lastname</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptates iusto, rem
+                        autem voluptatem harum ad quod aperiam aut illo.
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="header">
+                        <img src="./../assets/ayoub.jpg" alt="">
+                        <p>Name lastname</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptates iusto, rem
+                        autem voluptatem harum ad quod aperiam aut illo.
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="header">
+                        <img src="./../assets/ayoub.jpg" alt="">
+                        <p>Name lastname</p>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                        <i class="fa-regular fa-star"></i>
+                    </div>
+                    <div class="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas voluptates iusto, rem
+                        autem voluptatem harum ad quod aperiam aut illo.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
 
     </main>
 
+    <footer class="desktop-footer">
+        <span> <span>&copy; S3A Sass Team.</span> All rights resolved</span>
+        <ul>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+        </ul>
+        <div class="desktop-footer-footer">
+            <div class="desktop-footer-icons">
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+
+            </div>
+
+            <p>Designed by <span class="ayoub"> Ayoub</span></p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
     <script src="team-member.js"></script>
 </body>
 

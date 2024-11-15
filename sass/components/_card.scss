@@ -1,0 +1,40 @@
+.testimonial-card {
+    border: 2px solid #12f7d6;
+    background-color: #1a1e23;
+    padding: 20px 48px;
+    // width: 100%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  @media (min-width: 750px) {
+    align-items: flex-start;
+  }
+  .header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    img {
+      border-radius: 50%;
+      height: 80px;
+    }
+    p {
+      color: $white;
+      font-size: 12px;
+      text-align: center;
+    }
+  }
+  .stars {
+    color: $primary;
+    font-size: 16px;
+    display: flex;
+    gap: 6px;
+  }
+  .content {
+    font-size: 14px;
+    color: $white;
+  }
+}
+
+

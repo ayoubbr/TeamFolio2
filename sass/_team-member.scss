@@ -1,8 +1,173 @@
-body {
-    background-color: $bg;
+.team-member-main {
+  padding: 40px;
+  .developer {
+    font-weight: 400;
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    @media (min-width: 750px) {
+      font-size: 105px;
+      margin-top: 30px;
+    }
   }
-  
-  .main-content{
-      padding: 30px;
-  
+  .team-member-main-content {
+    padding: 30px;
+    color: $white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    @media (min-width: 750px) {
+      flex-direction: row;
+    }
+    .team-member-text {
+      @media (min-width: 750px) {
+        order: 1;
+      }
+    }
+    .team-member-text p span {
+      color: $primary;
+    }
+
+    .first-p {
+      font-size: 25px;
+      line-height: 35px;
+      @media (min-width: 750px) {
+        font-size: 45px;
+        line-height: 55px;
+      }
+    }
+
+    span {
+      font-size: 14px;
+      @media (min-width: 750px) {
+        font-size: 20px;
+      }
+    }
+    .name-span {
+      font-size: 25px;
+      @media (min-width: 750px) {
+        font-size: 45px;
+        line-height: 55px;
+      }
+    }
+    .lets-talk {
+      color: $primary;
+      font-size: 28px;
+      text-align: center;
+      margin-top: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      @media (min-width: 750px) {
+        font-size: 45px;
+        line-height: 55px;
+      }
+      i {
+        background-color: #444;
+        padding: 10px;
+        border-radius: 50%;
+      }
+    }
+    .team-member-box {
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+      align-items: center;
+      justify-content: center;
+      border: 4px solid $white;
+      padding: 40px 10px;
+      border-radius: 32% 0 32% 0;
+      width: 98%;
+      box-shadow: -4px -4px 0px $primary;
+      @media (min-width: 750px) {
+        order: 0;
+        width: 30%;
+      }
+
+      .team-member-box-header {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        img {
+          width: 35%;
+          border-radius: 50%;
+          border: 2px solid $primary;
+        }
+      }
+    }
+    .team-member-box-content {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+
+    }
+    .team-member-box-skills {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 90%;
+      gap: 10px;
+      margin: 16px 0;
+      span {
+        text-align: center;
+        background-color: $primary;
+        color: $bg-dark;
+        border-radius: 16px;
+        min-width: 50px;
+        padding: 10px;
+        @media (min-width: 750px) {
+         font-size: 15px;
+        }
+      }
+    }
+    .team-member-resume {
+      background-color: black;
+      width: 60%;
+      padding: 50px 40px;
+      border-radius: 30%;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      @media (min-width: 750px) {
+        order: 2;
+        width: 20%;
+      }
+
+      .team-member-resume-line {
+        display: flex;
+        gap: 30px;
+        align-items: center;
+        span {
+          color: $primary;
+          font-size: 50px;
+        }
+        p {
+          max-width: 100px;
+        }
+      }
+    }
   }
+  .testimonial-card-container {
+    display: grid;
+    grid-template-columns: repeat(1fr);
+    gap: 35px;
+    padding: 20px 40px;
+    @media (min-width: 750px) {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 20px 120px;
+    }
+  }
+  .team-member-testi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+  }
+}

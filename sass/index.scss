@@ -1,7 +1,9 @@
 @import "variables";
 @import "base";
 
+@import "./components/title";
 @import "./components/navbar";
 @import "./components/footer";
+@import "./components/card";
 @import "team";
 @import "team-member";

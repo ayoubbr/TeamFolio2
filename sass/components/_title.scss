@@ -1,0 +1,12 @@
+.team-main-title {
+  border-radius: 10px 0px 10px 0px;
+  border: 4px solid $primary;
+  text-align: center;
+  padding: 10px;
+  color: $white;
+  background-color: $bg-dark;
+  font-weight: 400;
+  @media (min-width: 450px) {
+    min-width: 30%;
+  }
+}
