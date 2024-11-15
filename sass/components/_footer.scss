@@ -1,0 +1,46 @@
+.desktop-footer {
+  display: flex;
+  justify-content: flex-start;
+  height: 80px;
+  border-top: 0.5px solid #dddddd1e;
+  margin-top: 20px;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px 40px;
+  gap: 10px;
+  color: $white;
+  flex-direction: column;
+
+  @media (min-width: 740px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  ul {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+    max-width: 400px;
+  }
+
+  .desktop-footer-icons {
+    display: flex;
+    gap: 10px;
+    margin-right: 20px;
+  }
+  span span {
+    color: $primary;
+  }
+
+  span.ayoub {
+    color: $primary;
+  }
+  .desktop-footer-icons i {
+    color: $primary;
+
+    //   @media(min-width: 450){
+    // }
+  }
+  .desktop-footer-footer{
+    display: flex;
+  }
+}

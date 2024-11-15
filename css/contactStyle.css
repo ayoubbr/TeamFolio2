@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+* {
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: #1A1E23;
+  color: #12F7D6;
+}
+
+@media (max-width: 426px) {
+  h1 {
+    font-size: 36px;
+    width: 221px;
+    border-radius: 15px 0px;
+    text-align: center;
+    border: #12F7D6 2px solid;
+  }
+  #contact {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .waitSande {
+    display: none;
+  }
+  .content {
+    width: 293px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .content img {
+    width: 238px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    margin-bottom: 58px;
+  }
+  .content .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 7px;
+  }
+  .content .inputs .namee, .content .inputs .emaill {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  .content .inputs .namee input, .content .inputs .emaill input {
+    width: 120px;
+    border: none;
+    border-bottom: solid #12F7D6;
+    background-color: #1A1E23;
+    color: #FFFFFF;
+  }
+  .content .inputs .messagee {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .content .inputs .messagee input {
+    width: 293px;
+    border: none;
+    border-bottom: solid #12F7D6;
+    background-color: #1A1E23;
+    color: #FFFFFF;
+  }
+  .content button {
+    margin-top: 98px;
+    background-color: #12F7D6;
+    width: 207px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+    border-radius: 15px;
+  }
+}
+@media (min-width: 426px) {
+  #contact {
+    border: 3px solid #12F7D6;
+    border-radius: 15px;
+    width: 1042px;
+    height: 638px;
+    margin: auto;
+  }
+  #contact h1 {
+    font-size: 36px;
+    width: 221px;
+    border-radius: 15px 0px;
+    text-align: center;
+    border: #12F7D6 2px solid;
+    margin: auto;
+  }
+  #contact .content {
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 50px;
+  }
+  #contact .content img {
+    width: 325px;
+    height: 373px;
+    border-radius: 15px;
+  }
+  #contact .content .inputs {
+    display: flex;
+    flex-wrap: wrap;
+    width: 292px;
+    height: 265px;
+    justify-content: space-evenly;
+  }
+  #contact .content .inputs .namee, #contact .content .inputs .emaill {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  #contact .content .inputs .namee input, #contact .content .inputs .emaill input {
+    width: 120px;
+    border: none;
+    border-bottom: solid #12F7D6;
+    background-color: #1A1E23;
+    color: #FFFFFF;
+  }
+  #contact .content .inputs .messagee {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  #contact .content .inputs .messagee input {
+    width: 293px;
+    border: none;
+    border-bottom: solid #12F7D6;
+    background-color: #1A1E23;
+    color: #FFFFFF;
+  }
+  #contact .content .inputs button {
+    margin-top: 98px;
+    background-color: #12F7D6;
+    width: 207px;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    text-align: center;
+    border-radius: 15px;
+  }
+  #contact .waitSande {
+    display: none;
+    margin-top: 40px;
+  }
+}/*# sourceMappingURL=style.css.map */

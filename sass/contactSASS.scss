@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+$colorP : #1A1E23;
+$colorS : #12F7D6;
+$colorW : #FFFFFF;
+
+@mixin mixNam1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin inputsElements ($valeurMargen) {
+    display: flex ;
+    flex-direction: column;
+    margin-bottom: $valeurMargen;
+}
+
+@mixin Inputs ($Wi) {
+    width: $Wi;
+    border: none;
+    border-bottom: solid $colorS;
+    background-color: $colorP;
+    color: $colorW;
+}
+
+* {
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    background-color: $colorP;
+    color: $colorS;
+}
+
+@media (max-width : 426px) {
+    
+
+    h1 {
+        font-size: 36px;
+        width: 221px;
+        border-radius: 15px 0px;
+        text-align: center;
+        border: $colorS 2px solid;
+
+    }
+
+    #contact {
+        width: 100%;
+        @include mixNam1;
+        
+    }
+
+    .waitSande {
+        display: none;
+    }
+    
+
+    .content {
+        width: 293px;
+        @include mixNam1;
+        
+        img {
+            width: 238px;
+            max-width: 100%;
+            height: auto;
+            border-radius: 15px;
+            margin-bottom: 58px;
+        }
+
+        .inputs {
+            display: flex ;
+            flex-wrap: wrap ;
+            justify-content: space-between;
+            padding: 7px;
+            
+            .namee, .emaill {
+                @include inputsElements (40px);
+                
+                input {
+                    @include Inputs (120px);
+                }
+            }
+
+            .messagee {
+                @include inputsElements (0px);
+
+                input {
+                    @include Inputs (293px);
+                }
+            }
+
+        }
+
+        button {
+            margin-top: 98px;
+            background-color: $colorS;
+            width: 207px;
+            padding-top: 14px;
+            padding-bottom: 14px;
+            text-align: center;
+            border-radius: 15px;
+        }
+
+    }
+}
+
+@media (min-width : 426px) {
+    
+
+
+    #contact {
+        border: 3px solid $colorS;
+        border-radius: 15px;
+        width: 1042px;
+        height: 638px;
+        margin: auto;
+        
+
+        h1 {
+            font-size: 36px;
+            width: 221px;
+            border-radius: 15px 0px;
+            text-align: center;
+            border: $colorS 2px solid;
+            margin: auto;
+
+        }
+
+        .content {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 50px;
+            img {
+                width: 325px;
+                height: 373px;
+                border-radius: 15px;
+                
+            }
+
+            .inputs {
+                display: flex;
+                flex-wrap: wrap;
+                width: 292px;
+                height: 265px;
+                justify-content: space-evenly;
+
+                .namee, .emaill {
+                    @include inputsElements (40px);
+                    
+                    input {
+                        @include Inputs (120px);
+                    }
+                }
+    
+                .messagee {
+                    @include inputsElements (0px);
+    
+                    input {
+                        @include Inputs (293px);
+                    }
+                }
+
+                button {
+                    margin-top: 98px;
+                    background-color: $colorS;
+                    width: 207px;
+                    padding-top: 14px;
+                    padding-bottom: 14px;
+                    text-align: center;
+                    border-radius: 15px;
+                }
+        
+            }
+        }
+
+        .waitSande {
+            display: none;
+            margin-top: 40px;
+        }
+
+    }
+
+    // .waitSande {
+    //     // display: none;
+    // }
+}
