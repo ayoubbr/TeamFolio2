@@ -1,4 +1,4 @@
-fetch('../js/main.json').then(response => response.json()).then(ansoir => {
+fetch('../contactJson.json').then(response => response.json()).then(ansoir => {
     
     document.querySelector('form').addEventListener("submit", (event) => {
         event.preventDefault();
@@ -7,7 +7,7 @@ fetch('../js/main.json').then(response => response.json()).then(ansoir => {
         const nameDeUser = document.getElementById("content-name").value;
         const emailDeUser = document.getElementById("content-email").value;
         const nameKeys = Object.keys (ansoir.userName); // all names of key
-        console.log(nameKeys); 
+        console.log(nameKeys);
         
         
         
