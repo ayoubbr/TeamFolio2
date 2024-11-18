@@ -5,7 +5,7 @@
         "name": "Alice",
         "role": "Frontend Developer",
         "description": "Specializes in responsive design and creating visually appealing user interfaces using HTML, CSS, and JavaScript.",
-        "skills": ["HTML", "CSS", "JavaScript", "React", "UI/UX Design"],
+        "skills": ["HTML", "CSS", "JavaScript", "React"],
         "projects": [1, 2, 3],
         "testimonials": [1, 2],
         "services": [1, 2],
@@ -18,7 +18,7 @@
           "Saturday": "Unavailable",
           "Sunday": "Unavailable"
         },
-        "image": "https://www.example.com/alice-image.jpg"
+        "image": "./../assets/member1.jpg"
       },
       {
         "id": 2,
@@ -38,7 +38,7 @@
           "Saturday": "Unavailable",
           "Sunday": "Unavailable"
         },
-        "image": "https://www.example.com/bob-image.jpg"
+         "image": "./../assets/member2.jpg"
       },
       {
         "id": 3,
@@ -58,7 +58,7 @@
           "Saturday": "Unavailable",
           "Sunday": "Unavailable"
         },
-        "image": "https://www.example.com/charlie-image.jpg"
+        "image": "./../assets/member3.jpg"
       },
       {
         "id": 4,
@@ -84,33 +84,7 @@
           "Saturday": "Unavailable",
           "Sunday": "Unavailable"
         },
-        "image": "https://www.example.com/diana-image.jpg"
-      },
-      {
-        "id": 5,
-        "name": "Eve",
-        "role": "API Specialist",
-        "description": "Focuses on designing and implementing efficient and well-documented RESTful APIs for seamless integrations.",
-        "skills": [
-          "RESTful APIs",
-          "Node.js",
-          "Swagger",
-          "OAuth",
-          "API Documentation"
-        ],
-        "projects": [3, 2],
-        "testimonials": [9, 10],
-        "services": [10, 11],
-        "availability_schedule": {
-          "Monday": "10:00 AM - 6:00 PM",
-          "Tuesday": "10:00 AM - 6:00 PM",
-          "Wednesday": "10:00 AM - 6:00 PM",
-          "Thursday": "10:00 AM - 6:00 PM",
-          "Friday": "10:00 AM - 6:00 PM",
-          "Saturday": "Unavailable",
-          "Sunday": "Unavailable"
-        },
-        "image": "https://www.example.com/eve-image.jpg"
+        "image": "./../assets/member4.jpg"
       }
     ],
     "projects": [

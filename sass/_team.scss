@@ -6,6 +6,14 @@
   justify-content: center;
 }
 
+.team-failed-data {
+  background-color: rgb(192, 123, 123);
+  padding: 20px 100px 20px 20px;
+  font-size: 24px;
+  text-align: start;
+  border-left: 4px solid red;
+}
+
 .team-header-text {
   display: flex;
   flex-direction: column;
@@ -76,7 +84,6 @@
     gap: 20px;
     @media (min-width: 750px) and (max-width: 1224px) {
       flex-direction: column;
-    }  
+    }
   }
 }
-
