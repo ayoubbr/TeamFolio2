@@ -54,6 +54,12 @@
 
             </div>
         </div>
+        <div class="team-member-testi">
+            <h1 class="team-main-title">Testimonials</h1>
+            <div class="testimonial-card-container">
+
+            </div>
+        </div>
 
     </main>
 
@@ -83,6 +89,7 @@
             const teamTextContainer = document.querySelector(".team-member-text");
             const teamBoxContainer = document.querySelector(".team-member-box");
             const teamResumeContainer = document.querySelector(".team-member-resume");
+            const testimonialCardContainer = document.querySelector(".testimonial-card-container");
 
             fetch("./../data.json")
                 .then(response => {
@@ -143,6 +150,33 @@
                                 <span>${member.services.length}</span>
                                 <p>Services</p>
                             </div>`
+
+
+
+                        const testimonials = data.testimonials.filter(testimonial =>
+                            testimonial.programmer_id == memberId
+                        );
+
+                        console.log(testimonials);
+
+                        testimonials.forEach(testimonial => {
+                            testimonialCardContainer.innerHTML += `
+                                <div class="testimonial-card">
+                                    <div class="header">
+                                        <img src="${testimonial.image}" alt="">
+                                        <p>${testimonial.author}</p>
+                                    </div>
+                                    <div class="stars">
+                                            Rating: ${'<i class="fa-regular fa-star"></i>'.repeat(testimonial.stars)}
+                                    </div>
+                                    <div class="content">
+                                        ${testimonial.message}
+                                    </div>
+                                </div>`
+                        });
+
+
+
                     } else {
                         document.querySelector(".team-member-main").innerHTML = `<p class="team-failed-data">Member not found.</p>`;
                     }
