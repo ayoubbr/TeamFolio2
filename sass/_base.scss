@@ -13,8 +13,8 @@ body {
 }
 
 ul {
-  padding: 0  !important;
-  list-style-type: none  !important;
+  padding: 0 !important;
+  list-style-type: none !important;
 }
 
 a {
@@ -49,9 +49,15 @@ h1 {
 .main-button {
   background-color: $bg-dark;
   color: $white;
+  &:hover {
+    background-color: $bg;
+  }
 }
 
 .secondary-button {
   color: $bg-dark;
   background-color: $primary;
+  &:hover {
+    background-color: $secondary;
+  }
 }
