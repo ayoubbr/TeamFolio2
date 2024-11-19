@@ -43,27 +43,23 @@
     <main class="team-edit-main">
         <h1 class="developer">Edit Form for : <span>smail</span></h1>
         <div class="team-edit-form">
-            <form action="">
+            <form action="" autocomplete="">
                 <div class="team-edit-input">
-                    <label for="">Name</label>
-                    <input type="text" value="smail">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" value="smail">
                 </div>
                 <div class="team-edit-input">
-                    <label for="">Role</label>
-                    <input type="text" value="Full stack developer">
+                    <label for="role">Role</label>
+                    <input type="text" id="role" value="Full stack developer">
                 </div>
                 <div class="team-edit-input">
-                    <label for="">Email</label>
-                    <input type="text" value="smail@gmail.com">
+                    <label for="skills">Programming languages / technologies</label>
+                    <textarea name="" id="skills" rows="3">HTML, CSS, JavaScript, React</textarea>
                 </div>
                 <div class="team-edit-input">
-                    <label for="">Programming languages / technologies</label>
-                    <textarea name="" id="" rows="3">HTML, CSS, JavaScript, React</textarea>
-                </div>
-                <div class="team-edit-input">
-                    <label for="">Few words about me </label>
+                    <label for="description">Few words about me </label>
                     <textarea name="" rows="4"
-                        id="">Lorem ipsum dolor, Repellat porro ea facere libero asperiores ratione aperiam, nesciunt, quod deleniti ipsum, fuga dolor!</textarea>
+                        id="description">Lorem ipsum dolor, Repellat porro ea facere libero asperiores ratione aperiam, nesciunt, quod deleniti ipsum, fuga dolor!</textarea>
                 </div>
                 <div class="team-edit-input">
                     <a class="secondary-button">Submit changes</a>
@@ -89,6 +85,46 @@
         </div>
     </footer>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const memberTitle = document.querySelector(".developer");
+            const nameInput = document.querySelector("#name");
+            const roleInput = document.querySelector("#role");
+            const skillsInput = document.querySelector("#skills");
+            const descriptionInput = document.querySelector("#description");
+
+
+            fetch("./../data.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error has occurred");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const team = data.team;
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const memberId = urlParams.get('id');
+                    const member = team.find(member => member.id == memberId);
+
+                    if (member) {
+                        memberTitle.innerHTML = `Edit Form for : <span>${member.name}</span>`;
+                        nameInput.value = member.name;
+                        roleInput.value = member.role;
+                        skillsInput.value = member.skills.map(skill => `${skill}`).join(', ');
+                        descriptionInput.value = member.description;
+                    } else {
+                        document.querySelector(".team-edit-main").innerHTML = `<p class="team-failed-data">Member not found.</p>`;
+                    }
+                })
+                .catch(error => {
+                    console.error("There was a problem with the fetch operation:", error);
+                });
+        });
+
+    </script>
 </body>
 
 </html>
