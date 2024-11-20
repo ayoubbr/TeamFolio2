@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamFolio</title>
+    <link rel="icon" href="./../assets/favicon.png" />
+    <link rel="stylesheet" href="./../css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <nav class="phone-nav">
+        <ul>
+            <li class="active"><a href="#"><i class="fa-solid fa-table-cells-large"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-user"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-code"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-desktop"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-pen-to-square"></i></a></li>
+            <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
+        </ul>
+    </nav>
+
+    <nav class="desktop-nav">
+        <span> <span>&lt;S3A/&gt;</span> SassTeam</span>
+        <ul>
+            <li class="active"><a href="#">Home</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class="desktop-nav-icons">
+            <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
+            <a href="#"><i class="fa-brands fa-github"></i></i> Github</a>
+        </div>
+    </nav>
+
+    <main class="team-edit-main">
+        <h1 class="developer">Edit Form for : <span>smail</span></h1>
+        <div class="team-edit-form">
+            <form action="" autocomplete="">
+                <div class="team-edit-input">
+                    <label for="name">Name (required)</label>
+                    <input type="text" id="name" value="smail" required>
+                </div>
+                <div class="team-edit-input">
+                    <label for="role">Role (required)</label>
+                    <input type="text" id="role" value="Full stack developer" required>
+                </div>
+                <div class="team-edit-input">
+                    <label for="skills">Skills (e.g., java, machine learning, web development):</label>
+                    <textarea name="" id="skills" rows="3" required></textarea>
+                </div>
+                <div class="team-edit-input">
+                    <label for="description">Few words about me (required)</label>
+                    <textarea name="" rows="4" id="description"
+                        required>Lorem ipsum dolor, Repellat porro ea facere libero asperiores ratione aperiam, nesciunt, quod deleniti ipsum, fuga dolor!</textarea>
+                </div>
+                <div class="team-edit-input">
+                    <a class="secondary-button">Submit changes</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="desktop-footer">
+        <span> <span>&copy; S3A Sass Team.</span> All rights resolved</span>
+        <ul>
+            <li><a href="#">Privacy policy</a></li>
+            <li><a href="#">Terms and conditions</a></li>
+        </ul>
+        <div class="desktop-footer-footer">
+            <div class="desktop-footer-icons">
+                <a href="#"><i class="fa-brands fa-discord"></i></a>
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+            </div>
+            <p>Designed by <span class="ayoub"> Ayoub</span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const memberTitle = document.querySelector(".developer");
+            const nameInput = document.querySelector("#name");
+            const roleInput = document.querySelector("#role");
+            const descriptionInput = document.querySelector("#description");
+            const skillsInput = document.querySelector("#skills");
+            const regex = /^(\w+(, )?)+$/;
+
+            let debounceTimeout;
+
+            function debounceValidateInput() {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(validateInput, 1500);
+            }
+
+            function validateInput() {
+                console.time("validateInput");
+                const input = skillsInput.value.trim();
+
+                if (!regex.test(input)) {
+                    skillsInput.classList.add('invalid');
+                } else {
+                    skillsInput.classList.remove('invalid');
+                }
+                console.timeEnd("validateInput");
+            }
+
+
+            fetch("./../data.json")
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error("Error has occurred");
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    const team = data.team;
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const memberId = urlParams.get('id');
+                    const member = team.find(member => member.id == memberId);
+
+                    if (member) {
+                        memberTitle.innerHTML = `Edit Form for : <span>${member.name}</span>`;
+                        nameInput.value = member.name;
+                        roleInput.value = member.role;
+                        skillsInput.value = member.skills.map(skill => `${skill}`).join(', ');
+                        descriptionInput.value = member.description;
+
+                        skillsInput.addEventListener('input', validateInput);
+                        skillsInput.addEventListener('blur', validateInput);
+
+                    } else {
+                        document.querySelector(".team-edit-main").innerHTML = `<p class="team-failed-data">Member not found.</p>`;
+                    }
+
+                })
+                .catch(error => {
+                    console.error("There was a problem with the fetch operation:", error);
+                });
+
+        });
+    </script>
+
+</body>
+
+</html>
