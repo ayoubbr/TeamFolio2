@@ -13,6 +13,7 @@
 </head>
 
 <body>
+
     <nav class="phone-nav">
         <ul>
             <li class="active"><a href="#"><i class="fa-solid fa-table-cells-large"></i></a></li>
@@ -23,6 +24,7 @@
             <li><a href="#"><i class="fa-solid fa-envelope"></i></a></li>
         </ul>
     </nav>
+
     <nav class="desktop-nav">
         <span> <span>&lt;S3A/&gt;</span> SassTeam</span>
         <ul>
@@ -30,13 +32,10 @@
             <li><a href="#">Services</a></li>
             <li><a href="#">Projects</a></li>
             <li><a href="#">Contact</a></li>
-
         </ul>
-
         <div class="desktop-nav-icons">
             <a href="#"><i class="fa-brands fa-discord"></i> Discord</a>
             <a href="#"><i class="fa-brands fa-github"></i></i> Github</a>
-
         </div>
     </nav>
 
@@ -45,21 +44,21 @@
         <div class="team-edit-form">
             <form action="" autocomplete="">
                 <div class="team-edit-input">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" value="smail">
+                    <label for="name">Name (required)</label>
+                    <input type="text" id="name" value="smail" required>
                 </div>
                 <div class="team-edit-input">
-                    <label for="role">Role</label>
-                    <input type="text" id="role" value="Full stack developer">
+                    <label for="role">Role (required)</label>
+                    <input type="text" id="role" value="Full stack developer" required>
                 </div>
                 <div class="team-edit-input">
-                    <label for="skills">Programming languages / technologies</label>
-                    <textarea name="" id="skills" rows="3">HTML, CSS, JavaScript, React</textarea>
+                    <label for="skills">Skills (e.g., java, machine learning, web development):</label>
+                    <textarea name="" id="skills" rows="3" required></textarea>
                 </div>
                 <div class="team-edit-input">
-                    <label for="description">Few words about me </label>
-                    <textarea name="" rows="4"
-                        id="description">Lorem ipsum dolor, Repellat porro ea facere libero asperiores ratione aperiam, nesciunt, quod deleniti ipsum, fuga dolor!</textarea>
+                    <label for="description">Few words about me (required)</label>
+                    <textarea name="" rows="4" id="description"
+                        required>Lorem ipsum dolor, Repellat porro ea facere libero asperiores ratione aperiam, nesciunt, quod deleniti ipsum, fuga dolor!</textarea>
                 </div>
                 <div class="team-edit-input">
                     <a class="secondary-button">Submit changes</a>
@@ -78,13 +77,10 @@
             <div class="desktop-footer-icons">
                 <a href="#"><i class="fa-brands fa-discord"></i></a>
                 <a href="#"><i class="fa-brands fa-github"></i></a>
-
             </div>
-
             <p>Designed by <span class="ayoub"> Ayoub</span></p>
         </div>
     </footer>
-
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -92,8 +88,28 @@
             const memberTitle = document.querySelector(".developer");
             const nameInput = document.querySelector("#name");
             const roleInput = document.querySelector("#role");
-            const skillsInput = document.querySelector("#skills");
             const descriptionInput = document.querySelector("#description");
+            const skillsInput = document.querySelector("#skills");
+            const regex = /^(\w+(, )?)+$/;
+
+            let debounceTimeout;
+
+            function debounceValidateInput() {
+                clearTimeout(debounceTimeout);
+                debounceTimeout = setTimeout(validateInput, 1500);
+            }
+
+            function validateInput() {
+                console.time("validateInput");
+                const input = skillsInput.value.trim();
+
+                if (!regex.test(input)) {
+                    skillsInput.classList.add('invalid');
+                } else {
+                    skillsInput.classList.remove('invalid');
+                }
+                console.timeEnd("validateInput");
+            }
 
 
             fetch("./../data.json")
@@ -115,16 +131,22 @@
                         roleInput.value = member.role;
                         skillsInput.value = member.skills.map(skill => `${skill}`).join(', ');
                         descriptionInput.value = member.description;
+
+                        skillsInput.addEventListener('input', validateInput);
+                        skillsInput.addEventListener('blur', validateInput);
+
                     } else {
                         document.querySelector(".team-edit-main").innerHTML = `<p class="team-failed-data">Member not found.</p>`;
                     }
+
                 })
                 .catch(error => {
                     console.error("There was a problem with the fetch operation:", error);
                 });
-        });
 
+        });
     </script>
+
 </body>
 
 </html>
